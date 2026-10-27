@@ -1,25 +1,93 @@
 ---
 name: evaluation
-description: Evaluate historical language lemmatization and POS-tagging against gold-standard annotations.
-user-invocable: true
+description: Evaluate historical-language lemma and POS predictions against EACL 2026 gold-standard annotations.
 ---
 
 # Historical NLP Evaluation
 
 ## Objective
-Measure the quality of predicted linguistic annotations.
+Evaluate lemmatization and POS-tagging predictions
+against gold-standard annotations.
 
-## Procedure
-1. Load predicted annotations and gold-standard data.
-2. Verify that tokens are correctly aligned.
-3. Calculate exact-match lemma accuracy.
-4. Calculate POS-tagging accuracy.
-5. Report results separately for each language.
-6. Distinguish in-domain and out-of-domain results.
-7. Compare zero-shot and few-shot settings when available.
+## Supported languages
+- GRC: Ancient Greek
+- HYE: Classical Armenian
+- KAT: Old Georgian
+- SYC: Syriac
 
-## Constraints
-- Never invent evaluation scores.
-- Do not evaluate without reference annotations.
-- Report alignment problems and missing data.
-- Document the number of evaluated tokens.
+## Reference datasets
+- `data/corpus/test_in-domain/{LANG}_test.tsv`
+- `data/corpus/test_out-of-domain/{LANG}_test.tsv`
+
+## Reference format
+The reference TSV files contain:
+- text_form
+- form
+- lemma
+- pos
+
+## Prediction format
+The expected predictions contain:
+- token
+- lemma
+- POS tag
+
+## Evaluation procedure
+1. Identify the language, model and experimental setting.
+2. Load the model predictions.
+3. Load the corresponding reference TSV.
+4. Exclude the header from the reference data.
+5. Verify token counts and alignment.
+6. Detect missing, duplicated or malformed predictions.
+7. Compare predicted lemmas against reference lemmas.
+8. Compare predicted POS tags against reference POS tags.
+9. Calculate exact-match accuracy for both tasks.
+10. Report results by language and dataset partition.
+
+## Metrics
+
+Lemma accuracy:
+Number of correctly predicted lemmas divided by
+the number of evaluated tokens.
+
+POS accuracy:
+Number of correctly predicted POS tags divided by
+the number of evaluated tokens.
+
+Report the denominator and any exclusions.
+
+## Experimental comparisons
+Compare results across:
+- Four historical languages
+- Zero-shot and few-shot settings
+- 5, 50 and 500 few-shot examples
+- In-domain and out-of-domain test sets
+- Different LLM providers and models
+
+## Composite annotations
+Preserve the project's `@` convention.
+
+Do not split composite annotations into additional
+tokens without an explicitly documented evaluation rule.
+
+## Scientific constraints
+- Never invent evaluation results.
+- Never evaluate without actual predictions.
+- Never modify gold-standard annotations.
+- Never use gold-standard labels during prediction.
+- Do not silently ignore missing predictions.
+- Report alignment errors before calculating metrics.
+- Distinguish exact-match evaluation from linguistic
+  equivalence or normalized evaluation.
+
+## Output
+Produce an evaluation report containing:
+- Language
+- Model
+- Experimental setting
+- Dataset partition
+- Number of evaluated tokens
+- Lemma accuracy
+- POS accuracy
+- Alignment errors
+- Methodological limitations
