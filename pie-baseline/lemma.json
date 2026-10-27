@@ -1,0 +1,38 @@
+{
+   "modelname": "modelname",
+   "modelpath": "./path/",
+   "run_test": false,
+   "input_path": "/path/*train.tsv",
+   "dev_path": "/path/*dev.tsv",
+   "sep": "\t",
+   "tasks": [
+      {
+         "name": "lemma",
+         "target": true,
+         "context": "sentence",
+         "level": "char",
+         "decoder": "attentional",
+         "settings": {
+            "bos": true,
+            "eos": true,
+            "lower": true,
+            "target": "lemma"
+         },
+         "layer": -1
+      }
+   ],
+   "batch_size": 50,
+   "epochs": 100,
+   "dropout": 0.25,
+   "patience": 3,
+   "lr": 0.001,
+   "lr_factor": 0.75,
+   "lr_patience": 2,
+   "cell": "GRU",
+   "num_layers": 2,
+   "hidden_size": 300,
+   "wemb_dim": 0,
+   "cemb_dim": 300,
+   "cemb_type": "rnn",
+   "cemb_layers": 2
+}

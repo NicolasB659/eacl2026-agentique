@@ -1,0 +1,28 @@
+all:
+  accuracy: 0.2359
+  balanced-accuracy: 0.0978
+  f1: 0.0841
+  precision: 0.0907
+  recall: 0.0978
+  support: 301
+ambiguous-tokens:
+  accuracy: 0.6667
+  balanced-accuracy: 0.3333
+  f1: 0.4
+  precision: 0.5
+  recall: 0.3333
+  support: 3
+known-tokens:
+  accuracy: 0.3559
+  balanced-accuracy: 0.182
+  f1: 0.1658
+  precision: 0.178
+  recall: 0.182
+  support: 59
+unknown-tokens:
+  accuracy: 0.2066
+  balanced-accuracy: 0.0769
+  f1: 0.056
+  precision: 0.0512
+  recall: 0.0769
+  support: 242

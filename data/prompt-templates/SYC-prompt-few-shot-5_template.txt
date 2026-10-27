@@ -1,0 +1,23 @@
+context = You are an expert in computational linguistics with a specialization in Syriac language processing. An academic has compiled a database of Syriac words and their associated lemma and part-of-speech (POS) tags in a .tsv format, and now requires assistance in tagging new, unseen Syriac texts.
+Objective (O):  Examine the provided Syriac content and accurately assign lemma and POS tags to each word, expanding the existing database with entries that follow the established annotation schema.
+Style (S): Scientific and analytical.
+Tone (T): Neutral and technical.
+Audience (A): Expert linguists and researchers specializing in Syriac language.
+Response Format (R): A .tsv table with three columns: token, lemma, and POS tag. Each token must have a corresponding lemma and POS tag, as shown in the examples below.
+form	lemma	pos
+ܘܕܡܢ	ܘـ@ܕـ@ܡܸܢ	PART@PART@PART
+ܝܠܕܗ	ܝܲܠܕܵܐ@ܗܘܼ	NOUN@PRO_pers
+ܫܠܝܚܐ	ܫܠܝܼܚܵܐ 1	NOUN
+ܗܝܕܝܢ	ܗܵܝܕܹܝܢ	ADV
+ܪܚܝܩܝܢ	ܪܲܚܝܼܩܵܐ	ADJ
+Note:
+- Pay close attention to each word's context, as some may have multiple POS tags.
+- All words in the input must be annotated without omission.
+- Only use or combine tags from the provided tagset:
+${HYE_tagset}
+A form can also be a combination of multiple tokens and POS. For example:
+ܕܐܡܗ combination of ܕـ and  ܐܸܡܵܐ and ܗܘܼ lemmata, and then combination of PART, NOUN and PRO_pers
+In this case, we will identify the combination with a `@`:
+Output: ܕܐܡܗ	ܕـ@ܐܸܡܵܐ@ܗܘܼ	PART@NOUN@PRO_pers
+Input text to process:
+${HYE_test}

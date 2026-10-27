@@ -123,4 +123,3 @@ This paper will also serve as a basis for a tutorial at LREC 2026: (https://flor
 
 #### Acknowledgements
 This research was supported by the French National Research Agency (ANR), grant ANR-21-CE38-0006 (DALiH project), and conducted as part of the PSL Research University's Major Research Program CultureLab. We thank the GREgORI lab for data access.
-# eacl2026-agentique

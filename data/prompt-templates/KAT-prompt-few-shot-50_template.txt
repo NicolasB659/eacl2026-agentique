@@ -1,0 +1,68 @@
+context = You are an expert in computational linguistics with a specialization in Old Georgian language processing. An academic has compiled a database of Old Georgian words and their associated lemma and part-of-speech (POS) tags in a .tsv format, and now requires assistance in tagging new, unseen Old Georgian texts.
+Objective (O):  Examine the provided Old Georgian content and accurately assign lemma and POS tags to each word, expanding the existing database with entries that follow the established annotation schema.
+Style (S): Scientific and analytical.
+Tone (T): Neutral and technical.
+Audience (A): Expert linguists and researchers specializing in Old Georgian language.
+Response Format (R): A .tsv table with three columns: token, lemma, and POS tag. Each token must have a corresponding lemma and POS tag, as shown in the examples below.
+form	lemma	pos
+ქალდეველთაგან	ქალდეველი@გან	A@I+Prep
+გამოსხმულნი	გამოსხმული	V+Part
+ჰონნი	ჰონი	A
+და	და	I+Conj
+ითხოვეს	თხოვა	V+Mas
+ბუნ-თურქთა	ბუნ-თურქი	A
+უფლისაგან	უფალი@გან	N+Com@I+Prep
+ქუეყანაჲ	ქუეყანაჲ	N+Com
+ხარკითა	ხარკი	N+Com
+და	და	I+Conj
+დასხდეს	დასხმა	V+Mas
+იგინი	იგი	PRO+Dem
+ზანავს	ზანავ	N+Top
+და	და	I+Conj
+ეპყრა	პყრობა	V+Mas
+იგი	იგი	PRO+Dem
+რომელ	რომელი (იგი)	PRO+Rel
+ხარკითა	ხარკი	N+Com
+აქუნდა	ქონება	V+Mas
+ჰრქჳან	რქუმა	V+Mas
+მას	იგი	PRO+Dem
+ხერკი	ხერკი	N+Top
+და	და	I+Conj
+შემდგომად	შემდგომი	V+Part
+რაოდენისამე	რაოდენი@მე	PRO+Int@PRO+Dem
+ჟამისა	ჟამი	N+Com
+მოვიდა	მოსლვა	V+Mas
+ალექსანდრე	ალექსანდრე	N+Ant
+მეფჱ	მეფჱ	N+Com
+ყოვლისა	ყოველი	A
+ქუეყანისაჲ	ქუეყანაჲ	N+Com
+და	და	I+Conj
+დალეწნა	დალეწვა	V+Mas
+სამნი	სამი	NUM+Car
+ესე	ესე	PRO+Dem
+ქალაქნი	ქალაქი	N+Com
+და	და	I+Conj
+ციხენი	ციხჱ	N+Com
+და	და	I+Conj
+ჰონთა	ჰონი	A
+დასცა	დაცემა	V+Mas
+მახჳლი	მახჳლი	A
+ხოლო	ხოლო	I+Conj
+სარკინესა	სარკინე	N+Top
+ქალაქსა	ქალაქი	N+Com
+ებრძოლა	ბრძოლა	V+Mas
+ათერთმეტ	ათერთმეტი	NUM+Car
+თთუჱ	თთუჱ	N+Com
+და	და	I+Conj
+დადგა	დადგომა	V+Mas
+Note:
+- Pay close attention to each word's context, as some may have multiple POS tags.
+- All words in the input must be annotated without omission.
+- Only use or combine tags from the provided tagset:
+${HYE_tagset}
+A form can also be a combination of multiple tokens and POS. For example:
+მირიანვე combination of მირიან and ვე lemmata, and then combination of N+Ant and I+Part.
+In this case, we will identify the combination with a `@`:
+Output: მირიანვე	მირიან@ვე	N+Ant@I+Part
+Input text to process:
+${HYE_test}

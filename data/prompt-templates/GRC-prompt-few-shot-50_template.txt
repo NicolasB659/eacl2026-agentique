@@ -1,0 +1,68 @@
+context = You are an expert in computational linguistics with a specialization in Ancient Greek language processing. An academic has compiled a database of Ancient Greek words and their associated lemma and part-of-speech (POS) tags in a .tsv format, and now requires assistance in tagging new, unseen Ancient Greek texts.
+Objective (O):  Examine the provided Ancient Greek content and accurately assign lemma and POS tags to each word, expanding the existing database with entries that follow the established annotation schema.
+Style (S): Scientific and analytical.
+Tone (T): Neutral and technical.
+Audience (A): Expert linguists and researchers specializing in Ancient Greek language.
+Response Format (R): A .tsv table with three columns: token, lemma, and POS tag. Each token must have a corresponding lemma and POS tag, as shown in the examples below.
+form	lemma	pos
+ταὐτόν	ὁ@αὐτός	DET@PRO+Dem
+οἶμαι	οἴομαι (–ω)	V
+πέπονθας	πάσχω	V
+ταῖς	ὁ	DET
+μελίσσαις	μέλισσα	N+Com
+ὅτε	ὅτε	I+Conj
+τάς	ὁ	DET
+ἀρχάς	ἀρχή	N+Com
+ζητεῖν	ζητέω	V
+τοῦ	ὁ	DET
+μέλιτος	μέλι	N+Com
+κατεπείγονται	κατεπείγω	V
+παρατρέχουσι	παρατρέχω	V
+μέν	μέν	I+Part
+γάρ	γάρ	I+Part
+ὡς	ὡς (ὅς)	I+Conj
+φασι	φημί	V
+τῶν	ὁ	DET
+ἀνθέων	ἄνθος (τό)	N+Com
+τά	ὁ	DET
+εὔοσμα	εὔοσμος	A
+ἐφίπτανται	ἐφίπταμαι	V
+δέ	δέ	I+Part
+τῷ	ὁ	DET
+θύμῳ	θύμος	N+Com
+φυτῷ	φυτόν	N+Com
+δριμύτητος	δριμύτης	N+Com
+γέμοντι	γέμω	V
+καί	καί	I+Part
+λίαν	λίαν	I+Adv
+ἀνόσμῳ	ἄνοσμος	A
+ἀλλά	ἀλλά	I+Part
+δεινόν	δεινός	A
+ἡ	ὁ	DET
+φιλία	φιλία	N+Com
+πάντας	πᾶς	A
+ἁπλῶς	ἁπλῶς	I+Adv
+τούς	ὁ	DET
+ἐνισχυμένους	ἐνισχύω	V
+γε	γε	I+Part
+ταύτῃ	οὗτος	PRO+Dem
+πάντα	πᾶς	A
+καί	καί	I+Part
+λέγειν	λέγω	V
+ὑπέρ	ὑπέρ	I+Prep
+τῶν	ὁ	DET
+φίλων	φίλος	A
+καί	καί	I+Part
+πράττειν	πράσσω	V
+πρός	πρός	I+Prep
+Note:
+- Pay close attention to each word's context, as some may have multiple POS tags.
+- All words in the input must be annotated without omission.
+- Only use or combine tags from the provided tagset:
+${HYE_tagset}
+A form can also be a combination of multiple tokens and POS. For example:
+ταὐτόν combination of ὁ and αὐτός lemmata, and then combination of DET andPRO+Dem.
+In this case, we will identify the combination with a `@`:
+Output: ταὐτόν	ὁ@αὐτός	DET@PRO+Dem
+Input text to process:
+${HYE_test}

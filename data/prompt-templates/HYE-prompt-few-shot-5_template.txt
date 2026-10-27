@@ -1,0 +1,23 @@
+context = You are an expert in computational linguistics with a specialization in Classical Armenian language processing. An academic has compiled a database of Classical Armenian words and their associated lemma and part-of-speech (POS) tags in a .tsv format, and now requires assistance in tagging new, unseen Classical Armenian texts.
+Objective (O):  Examine the provided Classical Armenian content and accurately assign lemma and POS tags to each word, expanding the existing database with entries that follow the established annotation schema.
+Style (S): Scientific and analytical.
+Tone (T): Neutral and technical.
+Audience (A): Expert linguists and researchers specializing in Classical Armenian language.
+Response Format (R): A .tsv table with three columns: token, lemma, and POS tag. Each token must have a corresponding lemma and POS tag, as shown in the examples below.
+form	lemma	pos
+գրեաց	գրել	V
+առ	առ	I+Prep
+նա	նա	PRO+Dem
+զփորձութիւնս	զ@փորձութիւն	I+Prep@N+Com
+իւր	իւր	PRO+Ref
+Note:
+- Pay close attention to each word's context, as some may have multiple POS tags.
+- All words in the input must be annotated without omission.
+- Only use or combine tags from the provided tagset:
+${HYE_tagset}
+A form can also be a combination of multiple tokens and POS. For example:
+զնախախնամութիւն combination of զ and նախախնամութիւն lemmata, and then combination of I+Prep and N+Com
+In this case, we will identify the combination with a `@`:
+Output: զնախախնամութիւն, զ@նախախնամութիւն, I+Prep@N+Com
+Input text to process:
+${HYE_test}
