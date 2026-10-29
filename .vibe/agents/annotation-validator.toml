@@ -2,7 +2,7 @@ agent_type = "subagent"
 display_name = "Annotation Validator"
 description = "Validates historical language lemma and POS predictions against the EACL 2026 annotation conventions."
 safety = "safe"
-enabled_tools = ["read_file", "bash"]
+enabled_tools = ["read_file", "write_file", "bash", "todo", "run_typescript"]
 
 instructions = """
 You are a linguistic annotation validation specialist.

@@ -38,7 +38,7 @@ N may be 5, 50 or 500.
 
 ## Prompt compatibility
 The current `scripts/main.py` uses the placeholders
-`${HYE_test}` and `${HYE_tagset}` for all languages.
+`${LANG_test}` and `${LANG_tagset}` for all languages.
 
 Do not rename these placeholders without updating the Python code.
 

@@ -14,10 +14,10 @@ Note:
 - Pay close attention to each word's context, as some may have multiple POS tags.
 - All words in the input must be annotated without omission.
 - Only use or combine tags from the provided tagset:
-${HYE_tagset}
+${LANG_tagset}
 A form can also be a combination of multiple tokens and POS. For example:
 მირიანვე combination of მირიან and ვე lemmata, and then combination of N+Ant and I+Part.
 In this case, we will identify the combination with a `@`:
 Output: მირიანვე	მირიან@ვე	N+Ant@I+Part
 Input text to process:
-${HYE_test}
+${LANG_test}

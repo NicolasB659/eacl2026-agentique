@@ -509,10 +509,10 @@ Note:
 - Pay close attention to each word's context, as some may have multiple POS tags.
 - All words in the input must be annotated without omission.
 - Only use or combine tags from the provided tagset:
-${HYE_tagset}
+${LANG_tagset}
 A form can also be a combination of multiple tokens and POS. For example:
 ταὐτόν combination of ὁ and αὐτός lemmata, and then combination of DET andPRO+Dem.
 In this case, we will identify the combination with a `@`:
 Output: ταὐτόν	ὁ@αὐτός	DET@PRO+Dem
 Input text to process:
-${HYE_test}
+${LANG_test}

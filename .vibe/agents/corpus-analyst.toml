@@ -2,7 +2,7 @@ agent_type = "subagent"
 display_name = "Corpus Analyst"
 description = "Analyzes the structure, quality and partitions of historical language corpora."
 safety = "safe"
-enabled_tools = ["read_file", "bash"]
+enabled_tools = ["read_file", "write_file", "bash", "todo", "run_typescript"]
 
 instructions = """
 You are a corpus analysis specialist for the EACL 2026 historical NLP project.

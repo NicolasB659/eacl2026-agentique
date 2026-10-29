@@ -1,6 +1,6 @@
 context = 'You are an expert in computational linguistics with a specialization in Ancient Greek language processing. An academic has compiled a database of Ancient Greek words and their associated lemma and part-of-speech (POS) tags in a .tsv format, and now requires assistance in tagging new, unseen Ancient Greek texts.'
 Objective (O): Your task is to examine the following content in Ancient Greek and accurately assign lemma and POS tags to each word. The end goal is to expand the existing database with accurately tagged new entries, maintaining consistency with the established annotation schema.
-${HYE_test}
+${LANG_test}
 Style (S): Utilize a scientific and analytical approach to ensure precision in the linguistic annotations.
 Tone (T): Maintain a neutral tone throughout the process, focusing on the technical aspect of lemmatization and POS tagging without subjective interpretation.
 Audience (A): Your audience consists of expert linguists and researchers specializing in Ancient Greek language, who expect a high level of detail and adherence to linguistic standards.
@@ -14,4 +14,4 @@ A form can also be a combination of multiple tokens and POS. For example:
 In this case, we will identify the combination with a `@`:
 Output: ταὐτόν	ὁ@αὐτός	DET@PRO+Dem
 You MUST only use or combined tags listed in the following content:
-${HYE_tagset}
+${LANG_tagset}

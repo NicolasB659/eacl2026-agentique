@@ -61,10 +61,10 @@ Note:
 - Pay close attention to each word's context, as some may have multiple POS tags.
 - All words in the input must be annotated without omission.
 - Only use or combine tags from the provided tagset:
-${HYE_tagset}
+${LANG_tagset}
 A form can also be a combination of multiple tokens and POS. For example:
 զնախախնամութիւն combination of զ and նախախնամութիւն lemmata, and then combination of I+Prep and N+Com
 In this case, we will identify the combination with a `@`:
 Output: զնախախնամութիւն, զ@նախախնամութիւն, I+Prep@N+Com
 Input text to process:
-${HYE_test}
+${LANG_test}
